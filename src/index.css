@@ -1,9 +1,13 @@
 * {
-  font-family: "Rubik", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #393c41;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import { StylesProvider } from "@material-ui/core";
+import Fade from "react-reveal/Fade";
 
 const Wrap = styled.div`
   width: 100vw;
@@ -44,6 +44,9 @@ const LeftButton = styled.div`
   font-size: 12px;
   cursor: pointer;
   margin: 8px;
+  &: hover {
+    background-color: skyblue;
+  }
 `;
 const RightButton = styled(LeftButton)`
   background: white;
@@ -85,22 +88,23 @@ const Section = ({
   backgroundImg,
 }) => {
   return (
-    <StylesProvider injectFirst>
-      <Wrap bgImage={backgroundImg}>
+    <Wrap bgImage={backgroundImg}>
+      <Fade bottom>
         <ItemText>
           <h1>{title}</h1>
           <p>{description}</p>
         </ItemText>
-        <Buttons>
+      </Fade>
+      <Buttons>
+        <Fade bottom>
           <ButtonGroup>
             <LeftButton>{leftBtnText}</LeftButton>
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </ButtonGroup>
-
-          <KeyboardArrow />
-        </Buttons>
-      </Wrap>
-    </StylesProvider>
+        </Fade>
+        <KeyboardArrow />
+      </Buttons>
+    </Wrap>
   );
 };
 
